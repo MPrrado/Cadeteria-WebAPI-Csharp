@@ -1,0 +1,6 @@
+@web_api_cadeteria_HostAddress = http://localhost:5214
+
+GET {{web_api_cadeteria_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
