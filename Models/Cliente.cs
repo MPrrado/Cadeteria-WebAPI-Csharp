@@ -7,10 +7,10 @@ namespace EspacioCliente
         private long telefono;
         private string referencias;
 
-        public string Nombre { get => nombre;}
-        public string Direccion { get => direccion;}
-        public long Telefono { get => telefono;}
-        public string Referencias { get => referencias;}
+        public string Nombre {get; init;} 
+        public string Direccion {get; init;}
+        public long Telefono {get; init;}
+        public string Referencias {get; init;}
         public Cliente()
         {
             

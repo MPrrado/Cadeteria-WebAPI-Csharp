@@ -11,11 +11,11 @@ namespace EspacioCadete
         private long telefono;
         private List<Pedido> listadoPedidos;
 
-        public int Id { get => id;}
-        public int Id1 { get => id;}
-        public string Nombre { get => nombre;}
-        public string Direccion { get => direccion;}
-        public long Telefono { get => telefono;}
+        public int Id {get;}
+        public int Id1 {get;}
+        public string Nombre {get;}
+        public string Direccion {get;}
+        public long Telefono {get;}
 
         public Cadete()
         {

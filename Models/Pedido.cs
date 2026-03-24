@@ -20,7 +20,8 @@ namespace EspacioPedido
         private Estados estado;
         private int idCadete;
 
-        public string? Observacion { get; init;}
+        public string? Observacion {get; init;}
+        public Cliente Cliente {get; init;}
 
         public Pedido()
         {
