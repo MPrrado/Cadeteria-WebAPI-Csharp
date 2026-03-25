@@ -11,11 +11,15 @@ namespace EspacioCadete
         private long telefono;
         private List<Pedido> listadoPedidos;
 
-        public int Id {get;}
-        public int Id1 {get;}
-        public string Nombre {get;}
-        public string Direccion {get;}
-        public long Telefono {get;}
+        public int Id { get; init; }
+        public string Nombre { get; init; }
+        public string Direccion { get; init; }
+        public long Telefono { get; init; }
+
+        // public int Id {get;}
+        // public string Nombre {get;}
+        // public string Direccion {get;}
+        // public long Telefono {get;}
 
         public Cadete()
         {
@@ -24,11 +28,11 @@ namespace EspacioCadete
 
         public Cadete(int id, string nombre, string direccion, long telefono)
         {
-            this.id =id;
-            this.nombre = nombre;
-            this.direccion = direccion;
-            this.telefono = telefono;
-            this.listadoPedidos = new List<Pedido>();
+            Id =id;
+            Nombre = nombre;
+            Direccion = direccion;
+            Telefono = telefono;
+            listadoPedidos = new List<Pedido>();
         }
 
         public double ObtenerJornal()
@@ -54,7 +58,7 @@ namespace EspacioCadete
             }
             catch (Exception e)
             {
-                Console.WriteLine($"ERROR NO SE PUDO ASIGNAR EL PEDIDO NUMERO: {pedido.ObtenerIdPedido()}");
+                // Console.WriteLine($"ERROR NO SE PUDO ASIGNAR EL PEDIDO NUMERO: {pedido.ObtenerIdPedido()}");
                 return false;
             }
         }
@@ -66,7 +70,7 @@ namespace EspacioCadete
 
         public string ObtenerNombreCadete()
         {
-            return nombre;
+            return Nombre;
         }
 
         public List<Pedido> ObtenerListadoPedidos()
@@ -86,10 +90,10 @@ namespace EspacioCadete
             }
         }
 
-        public void MostrarCadete()
-        {
-            Console.WriteLine("------------------------Cadete------------------------");
-            Console.WriteLine($"N°: {id} | nombre: {nombre} | direccion: {direccion} | telefono: {telefono}");
-        }
+        // public void MostrarCadete()
+        // {
+        //     Console.WriteLine("------------------------Cadete------------------------");
+        //     Console.WriteLine($"N°: {Id} | nombre: {Nombre} | direccion: {Direccion} | telefono: {Telefono}");
+        // }
     }
 }

@@ -30,24 +30,24 @@ namespace EspacioPedido
 
         public Pedido(string nombreCliente, string direccionEntrega, long telefonoCliente, string referenciasEntrega, string observacion)
         {
-            this.cliente = new Cliente(nombreCliente, direccionEntrega, telefonoCliente, referenciasEntrega);
-            this.observacion = observacion;
+            Cliente = new Cliente(nombreCliente, direccionEntrega, telefonoCliente, referenciasEntrega);
+            Observacion = observacion;
         }
         public Pedido(Cliente cliente, string observacion)
         {
-            this.cliente = new Cliente(cliente);
-            this.observacion = observacion;
+            Cliente = new Cliente(cliente);
+            Observacion = observacion;
         }
 
-        public void ObtenerDatosCliente()
-        {
-            Console.WriteLine("==========================================================================================================================");
-            Console.WriteLine("Nombre: ", cliente.Nombre);
-            Console.WriteLine("Direccion: ", cliente.Direccion);
-            Console.WriteLine("Telefono: ", cliente.Telefono);
-            Console.WriteLine("Referencias: ", cliente.Referencias);
-            Console.WriteLine("==========================================================================================================================");
-        }
+        // public void ObtenerDatosCliente()
+        // {
+        //     Console.WriteLine("==========================================================================================================================");
+        //     Console.WriteLine("Nombre: ", cliente.Nombre);
+        //     Console.WriteLine("Direccion: ", cliente.Direccion);
+        //     Console.WriteLine("Telefono: ", cliente.Telefono);
+        //     Console.WriteLine("Referencias: ", cliente.Referencias);
+        //     Console.WriteLine("==========================================================================================================================");
+        // }
 
         public string ObtenerDireccionCliente()
         {
@@ -69,10 +69,10 @@ namespace EspacioPedido
             this.estado = estado;
         }
         
-        public void MostrarPedido()
-        {
-             Console.WriteLine($"~~~ Pedido Numero: {numPedido} | Observacion: {observacion} | Nombre Cliente: {cliente.Nombre} | Direccion: {cliente.Direccion} | Estado: {estado}");
-        }
+        // public void MostrarPedido()
+        // {
+        //      Console.WriteLine($"~~~ Pedido Numero: {numPedido} | Observacion: {observacion} | Nombre Cliente: {cliente.Nombre} | Direccion: {cliente.Direccion} | Estado: {estado}");
+        // }
 
         public void AsignarIdCadete(int numeroCadete)
         {

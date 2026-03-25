@@ -17,10 +17,10 @@ namespace EspacioCliente
         }
         public Cliente(string nombre, string direccion, long telefono, string referencias)
         {
-            this.nombre = nombre;
-            this.direccion = direccion;
-            this.telefono = telefono;
-            this.referencias = referencias;
+            Nombre = nombre;
+            Direccion = direccion;
+            Telefono = telefono;
+            Referencias = referencias;
         }
         public Cliente(Cliente cliente)
         {
