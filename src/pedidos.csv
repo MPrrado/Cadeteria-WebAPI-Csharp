@@ -1,0 +1,51 @@
+NumPedido,Observacion,Cliente_Nombre,Cliente_Direccion,Cliente_Telefono,Cliente_Referencias,Estado,IdCadete
+1,Llamar al llegar,Matias Prado,Santa Fe 2834,3815825154,Porton negro,0,0
+2,,Lucia Gonzalez,San Martin 450,3814567890,Depto 2A,1,7
+3,Cuidado con el perro,Marcos Diaz,Av. Aconquija 1200,3815123456,Casa esquina,4,2
+4,Sin aderezos,Camila Ruiz,Crisostomo Alvarez 800,3814987654,Local comercial,2,9
+5,,Facundo Herrera,Muñecas 150,3815554433,Edificio cristal,3,1
+6,Dejar en recepcion,Valentina Gomez,25 de Mayo 300,3814112233,Oficina 4,4,10
+7,,Tomas Gimenez,Laprida 600,3815998877,Casa rejas blancas,0,0
+8,Traer cambio de 10000,Sofia Torres,Av. Sarmiento 900,3814776655,Frente al parque,1,8
+9,Timbre no anda,Lucas Castro,Santiago del Estero 400,3815332211,Golpear la ventana,2,4
+10,,Micaela Rojas,Balcarce 200,3814665544,Kiosco azul,3,6
+11,Tocar fuerte,Juan Perez,Mendoza 1100,3815223344,Puerta de madera,4,7
+12,Dejar en el garaje,Ana Lopez,Cordoba 850,3814991122,Junto al porton,1,3
+13,,Pedro Martinez,San Juan 320,3815887766,Timbre 3,2,1
+14,Llamar antes,Maria Fernandez,Maipu 540,3814332211,Local de ropa,3,9
+15,Sin servilletas,Diego Sanchez,Chacabuco 150,3815119988,Edificio torre,0,0
+16,,Laura Gomez,Av. Roca 1800,3814775533,Casa con ligustrina,4,5
+17,Entregar a seguridad,Carlos Diaz,9 de Julio 250,3815664422,Torre central,1,10
+18,Cuidado fragil,Florencia Ruiz,General Paz 700,3814228866,Porton gris,2,4
+19,,Pablo Alonso,Alberdi 300,3815993311,Casa fondo,3,8
+20,Tocar dos veces,Paula Herrera,Las Piedras 950,3814551177,PH 2,4,6
+21,Sin mayonesa,Esteban Quito,Lavalle 1200,3815882244,Al lado del super,0,0
+22,Esperar 5 min,Romina Paz,Rondeau 400,3814337799,Depto 5B,1,7
+23,,Javier Suarez,Bolivar 650,3815116688,Casa dos pisos,2,3
+24,Pago exacto,Silvia Moreno,San Lorenzo 800,3814669922,Frente a la plaza,3,9
+25,Dejar con el vecino,Martin Sosa,Ayacucho 550,3815443377,Casa verde,4,2
+26,,Natalia Vega,Jujuy 210,3814995511,Local esquinero,0,0
+27,Llamar al celular,Gabriel Luna,Salta 780,3815228844,Edificio nuevo,1,10
+28,No anda timbre,Daniela Rios,Catamarca 920,3814771166,Golpear puerta,2,4
+29,,Rodrigo Arce,Corrientes 150,3815667722,Galeria comercial,3,8
+30,Cuidado al abrir,Mariana Gil,Marcos Paz 430,3814115599,Casa rejas,4,6
+31,Con mucho picante,Joaquin Cruz,Av. Mitre 800,3815884411,Kiosco,0,0
+32,,Andrea Vera,Suipacha 120,3814448855,Depto 1C,1,3
+33,Tocar porton,Leandro Silva,San Miguel 340,3815339922,Taller mecanico,2,1
+34,Dejar paquete,Celeste Ortiz,Uruguay 560,3814992277,Casa ladrillo,3,9
+35,,Ignacio Rey,Italia 780,3815556611,Frente arbolado,4,2
+36,Llamar por favor,Victoria Cano,España 900,3814225588,Oficina 12,0,0
+37,Urgente,Ezequiel Mora,Paso de los Andes 150,3815771144,Consultorio,1,10
+38,,Sofia Castro,Asuncion 230,3814663399,Casa esquina,2,4
+39,Sin cebolla,Matias Arias,Lucas Cordoba 450,3815118833,Local verduleria,3,8
+40,Esperar afuera,Camila Pinto,Av. Salta 600,3814882255,Edificio blanco,4,6
+41,,Lucas Romero,San Martin 1500,3815447711,Depto 8A,0,0
+42,Llamar al llegar,Belen Suarez,Mendoza 200,3814119966,Galeria planta alta,1,7
+43,Tocar timbre,Gaston Medina,Cordoba 100,3815662288,Casa amarilla,2,3
+44,,Rocio Acosta,San Juan 800,3814557733,Local peluqueria,3,9
+45,Traer ticket,Federico Blanco,Santiago 1100,3815221199,Oficina contable,4,2
+46,Cuidado perro,Agustina Navarro,Maipu 700,3814996644,Casa rejas negras,0,0
+47,,Julian Cabrera,Chacabuco 900,3815883322,Depto 4D,1,10
+48,Dejar porteria,Melina Ramos,Av. Roca 500,3814335577,Torre 2,2,4
+49,Sin sal,Tomas Mendez,9 de Julio 1200,3815114499,Gimnasio,3,8
+50,,Carolina Gimenez,General Paz 300,3814779955,Casa porton blanco,4,6
