@@ -1,4 +1,5 @@
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.IO.Compression;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
@@ -56,7 +57,7 @@ namespace EspacioCadeteria
         //         return false;
         //     }
         // }
-        public bool AltaPedido(Pedido nuevoPedido, string rutaArchivoClientes)
+        public bool AltaPedido(Pedido nuevoPedido)
         {
             Random rnd = new Random();
             if(nuevoPedido == null) return false;
@@ -66,9 +67,10 @@ namespace EspacioCadeteria
                 idPedido = listadoPedidos.Max(p => p.ObtenerIdPedido()) + 1;
             }
             nuevoPedido.AsignarNumeroPedido(idPedido);
-            nuevoPedido.CambiarEstado(Estados.SinAsignar);
-            string[] datosCliente = AccesoADatos.ObtenerCliente(rutaArchivoClientes);
-            nuevoPedido.AsignarCliente(datosCliente[0], datosCliente[1], long.Parse(datosCliente[2]), datosCliente[3]);
+            // nuevoPedido.CambiarEstado(Estados.SinAsignar); //comentado solo para pruebas 
+            // string[] datosCliente = AccesoADatos.ObtenerCliente(rutaArchivoClientes);
+            nuevoPedido.AsignarCliente(nuevoPedido.Cliente.Nombre, nuevoPedido.Cliente.Direccion, nuevoPedido.Cliente.Telefono, nuevoPedido.Cliente.Referencias);
+            this.listadoPedidos.Add(nuevoPedido);
             return true;
         }
 
@@ -196,6 +198,65 @@ namespace EspacioCadeteria
         {
             return listadoCadete.Exists(c => c.Id ==numeroCadete) ? listadoCadete.First(c => c.Id == numeroCadete): null;
         }
-    
+
+        public List<Cadete> ObtenerListadoCadetes()
+        {
+            return listadoCadete;
+        }
+        public double ObtenerPromedioEntregasPorCadete(int idCadete)
+        {
+            if (!listadoCadete.Any(c => c.Id == idCadete)) return 0; //si no existe tal cadete en la lista no buscamos y retornamos 0
+            List<Pedido> pedidosListado = listadoCadete.First(c => c.Id == idCadete).ObtenerListadoPedidos(); //si existe lo separamos y obtenemos la lista de pedidos del mismo
+            if (pedidosListado.Count == 0) return 0; //si el cadete no tiene pedidos, evitamos la division por cero y retornamos 0
+            int pedidosEntregado = pedidosListado.Count(p => p.ObtenerEstadoPedido() == Estados.Entregado.ToString()); //contamos los pedidos entregados
+            int pedidosTotal = pedidosListado.Count(); //contamos el total de pedidos
+            return (double)(pedidosEntregado / (double)pedidosTotal)*100; //retornamos el porcentaje de entregas realizadas por el cadete
+        }
+
+        public double ObtenerRecaudacionCadete(int idCadete)
+        {
+            if (!listadoCadete.Any(c => c.Id == idCadete)) return 0; //si no existe tal cadete en la lista no buscamos y retornamos 0
+            return listadoCadete.First(c => c.Id == idCadete).ObtenerJornal(); //si existe lo separamos y obtenemos el jornal del mismo
+        }
+
+        public Informe GenerarInforme()
+        {
+            int totalPedidos = listadoPedidos.Count;
+            int pedidosEntregados = 0;
+            
+            foreach (Pedido p in listadoPedidos)
+            {
+                if (p.ObtenerEstadoPedido() == Estados.Entregado.ToString())
+                {
+                    pedidosEntregados++;
+                }
+            }
+
+            double promedioEntregas = 0;
+            double recaudacionPorCadete = 0;
+            List<string> listaPromedios = new List<string>();
+            List<string> listaRecaudacion = new List<string>();
+
+            //obtenemos el promedio de entregas por cadete y la recaudacion por cadete para luego agregarlos a una lista de strings que se muestra en el informe
+
+            foreach (Cadete c in listadoCadete)
+            {
+                promedioEntregas = ObtenerPromedioEntregasPorCadete(c.Id);
+                recaudacionPorCadete = ObtenerRecaudacionCadete(c.Id);
+                listaPromedios.Add($"Cadete: {c.ObtenerNombreCadete()} - Promedio de entregas: {promedioEntregas}%");
+                listaRecaudacion.Add($"Cadete: {c.ObtenerNombreCadete()} - Recaudacion: {recaudacionPorCadete}");
+            }
+
+            double totalRecaudado = ObtenerRecaudacion();
+            
+            return new Informe
+            {
+                TotalPedidos = listadoPedidos.Count,
+                PedidosEntregados = pedidosEntregados,
+                PromediosDeEntregaPorCadete = listaPromedios,
+                RecaudadoPorCadete = listaRecaudacion,
+                TotalRecaudado = totalRecaudado
+            };
+        }
     }
 }
